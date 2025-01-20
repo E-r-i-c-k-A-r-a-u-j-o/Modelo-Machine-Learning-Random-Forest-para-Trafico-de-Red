@@ -14,11 +14,6 @@ escalador = joblib.load("random_forest_scaler.pkl")
 class DatosEntrada(BaseModel):
     input: list
 
-# Ruta principal para verificar que la API esté funcionando
-@app.get("/")
-def read_root():
-    return {"mensaje": "¡API funcionando correctamente!"}
-
 # Ruta para realizar predicciones
 @app.post("/predict")
 def predict(datos: DatosEntrada):
